@@ -34,10 +34,12 @@ public class MainController {
             @RequestParam @NotBlank String authCode)
             throws ApiException, ClientException, IOException
     {
+        logger.info("Received request for "+albumUrl);
         File tempFile = File.createTempFile("photo",".jpg");
         FileUtils.copyURLToFile(new URL(photoUrl),tempFile);
         String response = mainService.findPhoto(tempFile, albumUrl, authCode);
         if (!tempFile.delete()) logger.warn("Can't delete temp file");
+        logger.info("Responding: "+response);
         return response;
     }
 
@@ -49,12 +51,14 @@ public class MainController {
             @RequestParam @NotBlank String authCode)
             throws ApiException, ClientException, IOException
     {
+        logger.info("Received request for "+albumUrl);
         if (file.getSize()==0) throw new IllegalArgumentException();
         String ext = "." + FilenameUtils.getExtension(file.getOriginalFilename());
         File tempFile = File.createTempFile("photo", ext);
         file.transferTo(tempFile);
         String response = mainService.findPhoto(tempFile, albumUrl, authCode);
         if (!tempFile.delete()) logger.warn("Can't delete temp file");
+        logger.info("Responding: "+response);
         return response;
     }
 
