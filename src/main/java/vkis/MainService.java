@@ -31,8 +31,10 @@ public class MainService {
 	@Value("${CLIENT_SECRET}")
 	private String CLIENT_SECRET;
 
+	@Value("${IMG_SIZE}")
+	private int IMG_SIZE;
+
 	private final int REQUEST_COUNT = 1000;
-	private final int IMG_SIZE = 50;
 	private final double ASPECT_RATIO_EPS = 0.01;
 
 	private VkApiClient vk;
