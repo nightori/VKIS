@@ -1,2 +1,2 @@
 # VKIS
- VK Image Search
+This is the back-end part of VKIS, which is hosted [here](https://vkis.nightori.ru). If you intend to actually run it, you need to set the env variable APP_URL (full link to the main page), as well as APP_ID, REDIRECT_URI and CLIENT_SECRET which are used for VK API interaction.
