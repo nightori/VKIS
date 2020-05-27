@@ -10,6 +10,8 @@ import com.vk.api.sdk.objects.UserAuthResponse;
 import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.photos.PhotoSizes;
 import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,7 @@ import java.util.List;
 
 @Service
 public class MainService {
+	private static final Logger logger = LoggerFactory.getLogger(MainService.class);
 
 	@Value("${APP_ID}")
 	private Integer APP_ID;
@@ -104,6 +107,7 @@ public class MainService {
 				.userAuthorizationCodeFlow(APP_ID, CLIENT_SECRET, REDIRECT_URI, code)
 				.execute();
 		actor = new UserActor(authResponse.getUserId(), authResponse.getAccessToken());
+		logger.info("Authorized: id"+actor.getId());
 	}
 
 	private List<Photo> getPhotoList(
