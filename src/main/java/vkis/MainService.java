@@ -93,6 +93,9 @@ public class MainService {
 					String photoUrl = "https://vk.com/photo" + photo.getOwnerId() + "_" + photo.getId();
 					response = photoUrl + "," + ps.getUrl();
 				}
+
+				// delete the temp file after it's processed
+				if (!tempFile.delete()) logger.warn("Can't delete temp file");
 			}
 		}
 		vk = null;
