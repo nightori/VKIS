@@ -1,4 +1,3 @@
-# VKIS
 ## Description
 This is the back-end part of VKIS, which is hosted [here](https://vkis.nightori.ru).
 
