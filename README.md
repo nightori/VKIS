@@ -5,8 +5,7 @@ It's a service that lets you find an image in a VK album (or check if it exists)
 
 You can use a direct link to an image or upload it from your device.
 ## Dependencies
-This application is built with [Spring Framework](https://spring.io/projects/spring-framework). The following modules are used:
-- Spring Boot
+This application is built with [Spring Boot](https://spring.io/projects/spring-boot). The following modules are used:
 - Spring Web
 - Spring Security
 
