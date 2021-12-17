@@ -8,6 +8,7 @@ group = 'com.ocg'
 version = '1.0.0'
 //noinspection GroovyUnusedAssignment
 sourceCompatibility = '11'
+ext['log4j2.version'] = '2.16.0'
 
 repositories {
 	mavenCentral()
